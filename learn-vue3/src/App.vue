@@ -1,18 +1,21 @@
 <template>
+	<LayoutHeader></LayoutHeader>
 	<div>
-		<p>{{ refs }}</p>
-		<button type="button" @click="refsHandler(refs, $event)">값 변경</button>
+		<PropsStudy
+			:title="titles"
+			:content="true"
+			:new="true"
+			@newProps="titles = '바뀐 첫번째 프롭스'"
+		></PropsStudy>
 	</div>
 </template>
 
 <script setup lang="ts">
+import PropsStudy from "./components/PropsStudy.vue";
+import LayoutHeader from "./components/LayoutHeader.vue";
 import { ref } from "vue";
 
-const refs = ref<number>(300);
-type refsEvents = (args: number, event: Event) => void;
-const refsHandler: refsEvents = (args: number, event: Event) => {
-	refs.value++;
-};
+const titles = ref<string>('첫번째 프롭스')
 </script>
 
 <style scoped></style>
