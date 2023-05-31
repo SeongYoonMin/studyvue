@@ -18,6 +18,8 @@ const props = defineProps<{
 
 <style scoped lang="scss">
 .items {
+	width: 100%;
+	max-width: 300px;
 	border: 1px solid #f5f5f5;
 	border-radius: 8px;
 	padding: 12px;

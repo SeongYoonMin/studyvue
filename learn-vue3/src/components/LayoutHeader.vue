@@ -44,7 +44,7 @@ const Menus = ref<IHeaderMenu[]>([
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 10px 40px;
+	padding: 10px 20px;
 	box-sizing: border-box;
 	display: flex;
 	align-items: center;
