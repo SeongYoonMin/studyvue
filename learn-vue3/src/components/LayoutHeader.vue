@@ -2,12 +2,12 @@
 	<header id="headers">
 		<a href="/" class="homeItems">HOME</a>
 		<nav class="menus">
-			<a
+			<RouterLink
 				class="items"
-				:href="items.route"
-				:key="items.id"
-				v-for="items in Menus"
-				>{{ items.title }}</a
+				:to="items.route"
+				:key="index"
+				v-for="(items, index) in Menus"
+				>{{ items.title }}</RouterLink
 			>
 		</nav>
 	</header>
@@ -17,7 +17,6 @@
 import { ref } from "vue";
 
 interface IHeaderMenu {
-	id: number;
 	title: string;
 	route: string;
 }
@@ -25,17 +24,18 @@ interface IHeaderMenu {
 
 const Menus = ref<IHeaderMenu[]>([
 	{
-		id: 0,
-		title: "INFORMATION",
-		route: "/",
+		title: "BOARD",
+		route: "/board",
 	},
 	{
-		id: 1,
+		title: "RESUME",
+		route: "/resume",
+	},
+	{
 		title: "CONTACT",
-		route: "/",
+		route: "/contact",
 	},
 ]);
-
 </script>
 
 <style scoped lang="scss">
